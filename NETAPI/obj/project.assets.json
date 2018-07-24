@@ -14326,11 +14326,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "U:\\Study\\Projects\\API\\NETAPI\\NETAPI\\NETAPI.csproj",
+      "projectUniqueName": "U:\\Study\\Projects\\APIv2\\NETAPI\\NETAPI\\NETAPI.csproj",
       "projectName": "NETAPI",
-      "projectPath": "U:\\Study\\Projects\\API\\NETAPI\\NETAPI\\NETAPI.csproj",
+      "projectPath": "U:\\Study\\Projects\\APIv2\\NETAPI\\NETAPI\\NETAPI.csproj",
       "packagesPath": "C:\\Users\\UnknowNPC\\.nuget\\packages\\",
-      "outputPath": "U:\\Study\\Projects\\API\\NETAPI\\NETAPI\\obj\\",
+      "outputPath": "U:\\Study\\Projects\\APIv2\\NETAPI\\NETAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
