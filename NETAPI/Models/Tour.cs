@@ -5,37 +5,63 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Runtime.Serialization.Json;
+using System.Runtime.Serialization.Formatters;
+using System.ComponentModel;
+using MongoDB.Bson.Serialization.IdGenerators;
+using MongoDB.Bson.Serialization.Serializers;
+using Newtonsoft.Json;
 
 namespace NETAPI.Models
 {
     public class Tour
     {
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonId(IdGenerator = typeof(BsonObjectIdGenerator))]
         [BsonElement("_id")]
-        public string Id { get; set; }
-        [BsonRepresentation(BsonType.String)]
+        public BsonObjectId Id { get; set; }
         [BsonElement("name")]
+        [BsonRequired]
         public string Name { get; set; }
-        [BsonRepresentation(BsonType.String)]
         [BsonElement("description")]
         public string Description { get; set; }
-        [BsonRepresentation(BsonType.String)]
-        [BsonElement("guide")]
-        public string Guide { get; set; }
-        [BsonRepresentation(BsonType.Array)]
-        [BsonElement("cities")]
-        public List<string> Cities { get; set; }
-        [BsonRepresentation(BsonType.Int32)]
         [BsonElement("allSeats")]
+        [BsonRequired]
+        [JsonIgnore]
         public int All { get; set; }
-        [BsonRepresentation(BsonType.String)]
         [BsonElement("status")]
+        [BsonRequired]
         public string Status { get; set; }
-        [BsonRepresentation(BsonType.Int32)]
         [BsonElement("freeSeats")]
+        [BsonRequired]
         public int Free { get; set; }
-        [BsonRepresentation(BsonType.Int32)]
         [BsonElement("price")]
+        [BsonRequired]
         public int Price { get; set; }
+        [BsonElement("from")]
+        [BsonRequired]
+        [JsonIgnore]
+        public DateTime? Start { get; set; }
+        [BsonElement("to")]
+        [BsonRequired]
+        [JsonIgnore]
+        public DateTime? End { get; set; }
+        [BsonElement("created")]
+        [BsonRequired]
+        [JsonIgnore]
+        public DateTime? Created { get; set; }
+        [BsonIgnore]
+        public string Date { get; set; }
+
+        public void StringifyDate()
+        {
+            Date = string.Empty;
+            Date += Start.HasValue ? $"{Start.GetValueOrDefault().ToShortDateString()} : {Start.GetValueOrDefault().ToShortTimeString()}" : string.Empty;
+            Date += " - ";
+            Date += End.HasValue ? $"{End.GetValueOrDefault().ToShortDateString()} : {End.GetValueOrDefault().ToShortTimeString()}" : string.Empty;
+        }
     }
 }
+
+/*
+ * 
+ */
