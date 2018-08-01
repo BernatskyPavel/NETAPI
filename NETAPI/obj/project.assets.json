@@ -29,6 +29,15 @@
           "lib/netstandard1.3/DnsClient.dll": {}
         }
       },
+      "FluentScheduler/5.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.4/FluentScheduler.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/FluentScheduler.dll": {}
+        }
+      },
       "Isopoh.Cryptography.Argon2/1.0.8": {
         "type": "package",
         "dependencies": {
@@ -1832,6 +1841,54 @@
           "lib/netstandard1.4/Microsoft.Azure.KeyVault.WebKey.dll": {}
         }
       },
+      "Microsoft.Azure.Management.Redis/4.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime": "[2.3.10, 3.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.10, 4.0.0)",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Net.Http": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Azure.Management.Redis.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Azure.Management.Redis.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Redis.Fluent/1.13.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "1.13.0",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.10, 4.0.0)",
+          "NETStandard.Library": "1.6.1",
+          "System.Net.Http": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Azure.Management.Redis.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Azure.Management.Redis.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.ResourceManager.Fluent/1.13.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.10, 4.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure.Authentication": "2.3.2",
+          "NETStandard.Library": "1.6.1",
+          "System.Net.Http": "4.3.0",
+          "System.Net.NetworkInformation": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Azure.Management.ResourceManager.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Azure.Management.ResourceManager.Fluent.dll": {}
+        }
+      },
       "Microsoft.Azure.Services.AppAuthentication/1.0.1": {
         "type": "package",
         "dependencies": {
@@ -1966,86 +2023,6 @@
         },
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
-        }
-      },
-      "Microsoft.Data.Edm/5.8.2": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.1/Microsoft.Data.Edm.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/Microsoft.Data.Edm.dll": {}
-        },
-        "resource": {
-          "lib/netstandard1.1/de/Microsoft.Data.Edm.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard1.1/es/Microsoft.Data.Edm.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard1.1/fr/Microsoft.Data.Edm.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard1.1/it/Microsoft.Data.Edm.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard1.1/ja/Microsoft.Data.Edm.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard1.1/ko/Microsoft.Data.Edm.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard1.1/ru/Microsoft.Data.Edm.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard1.1/zh-Hans/Microsoft.Data.Edm.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard1.1/zh-Hant/Microsoft.Data.Edm.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
-      "Microsoft.Data.OData/5.8.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Data.Edm": "[5.8.2]",
-          "System.Spatial": "[5.8.2]"
-        },
-        "compile": {
-          "lib/netstandard1.1/Microsoft.Data.OData.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/Microsoft.Data.OData.dll": {}
-        },
-        "resource": {
-          "lib/netstandard1.1/de/Microsoft.Data.OData.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard1.1/es/Microsoft.Data.OData.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard1.1/fr/Microsoft.Data.OData.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard1.1/it/Microsoft.Data.OData.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard1.1/ja/Microsoft.Data.OData.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard1.1/ko/Microsoft.Data.OData.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard1.1/ru/Microsoft.Data.OData.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard1.1/zh-Hans/Microsoft.Data.OData.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard1.1/zh-Hant/Microsoft.Data.OData.resources.dll": {
-            "locale": "zh-Hant"
-          }
         }
       },
       "Microsoft.Data.Sqlite/2.1.0": {
@@ -3176,7 +3153,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Rest.ClientRuntime/2.3.8": {
+      "Microsoft.Rest.ClientRuntime/2.3.10": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -3189,10 +3166,10 @@
           "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.dll": {}
         }
       },
-      "Microsoft.Rest.ClientRuntime.Azure/3.3.7": {
+      "Microsoft.Rest.ClientRuntime.Azure/3.3.10": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Rest.ClientRuntime": "[2.3.8, 3.0.0)",
+          "Microsoft.Rest.ClientRuntime": "[2.3.9, 3.0.0)",
           "NETStandard.Library": "1.6.1",
           "Newtonsoft.Json": "9.0.1"
         },
@@ -3201,6 +3178,22 @@
         },
         "runtime": {
           "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        }
+      },
+      "Microsoft.Rest.ClientRuntime.Azure.Authentication/2.3.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Clients.ActiveDirectory": "[3.13.9, 4.0.0)",
+          "Microsoft.IdentityModel.Tokens": "[5.1.2, 6.0.0)",
+          "Microsoft.Rest.ClientRuntime": "[2.3.9, 3.0.0)",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.Authentication.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.Authentication.dll": {}
         }
       },
       "Microsoft.VisualStudio.Web.BrowserLink/2.1.1": {
@@ -5509,44 +5502,6 @@
           }
         }
       },
-      "System.Spatial/5.8.2": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.1/System.Spatial.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/System.Spatial.dll": {}
-        },
-        "resource": {
-          "lib/netstandard1.1/de/System.Spatial.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard1.1/es/System.Spatial.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard1.1/fr/System.Spatial.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard1.1/it/System.Spatial.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard1.1/ja/System.Spatial.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard1.1/ko/System.Spatial.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard1.1/ru/System.Spatial.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard1.1/zh-Hans/System.Spatial.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard1.1/zh-Hant/System.Spatial.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
       "System.Text.Encoding/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -5876,13 +5831,11 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "WindowsAzure.Storage/8.1.4": {
+      "WindowsAzure.Storage/9.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Data.OData": "5.8.2",
-          "NETStandard.Library": "1.6.0",
-          "Newtonsoft.Json": "9.0.1",
-          "System.Spatial": "5.8.2"
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.2"
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
@@ -5905,6 +5858,21 @@
         "lib/net45/DnsClient.xml",
         "lib/netstandard1.3/DnsClient.dll",
         "lib/netstandard1.3/DnsClient.xml"
+      ]
+    },
+    "FluentScheduler/5.3.0": {
+      "sha512": "XBLwqw3FFdkG6qIrxg7M9mIsigZje+qKTinWZWfyr47IN6O/0z6fFUoQCVEBvY0lk1puf4hU0VnVhN/kPNZL+A==",
+      "type": "package",
+      "path": "fluentscheduler/5.3.0",
+      "files": [
+        "fluentscheduler.5.3.0.nupkg.sha512",
+        "fluentscheduler.nuspec",
+        "lib/net40/FluentScheduler.dll",
+        "lib/net40/FluentScheduler.pdb",
+        "lib/net40/FluentScheduler.xml",
+        "lib/netstandard1.4/FluentScheduler.dll",
+        "lib/netstandard1.4/FluentScheduler.pdb",
+        "lib/netstandard1.4/FluentScheduler.xml"
       ]
     },
     "Isopoh.Cryptography.Argon2/1.0.8": {
@@ -7317,6 +7285,53 @@
         "microsoft.azure.keyvault.webkey.nuspec"
       ]
     },
+    "Microsoft.Azure.Management.Redis/4.4.0": {
+      "sha512": "TiUj4EhNRm8kguw4BFmvNZ3ZoJPJ3O2OVeyPwRfPPudErjkvybGVyjm0WroRvhj+KaxLuQVpygOFSmvQNApprg==",
+      "type": "package",
+      "path": "microsoft.azure.management.redis/4.4.0",
+      "files": [
+        "lib/net452/Microsoft.Azure.Management.Redis.dll",
+        "lib/net452/Microsoft.Azure.Management.Redis.runtimeconfig.json",
+        "lib/net452/Microsoft.Azure.Management.Redis.xml",
+        "lib/netstandard1.4/Microsoft.Azure.Management.Redis.dll",
+        "lib/netstandard1.4/Microsoft.Azure.Management.Redis.runtimeconfig.json",
+        "lib/netstandard1.4/Microsoft.Azure.Management.Redis.xml",
+        "microsoft.azure.management.redis.4.4.0.nupkg.sha512",
+        "microsoft.azure.management.redis.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.Redis.Fluent/1.13.0": {
+      "sha512": "OBvRvpel1oBH5Fg6T7xDJxcwyeBM4BSnslt3AYJ8gggHE4w0cTwvS0F9YOIJ//VMl7ZCiMVWuEfXP+Nw8qFiqQ==",
+      "type": "package",
+      "path": "microsoft.azure.management.redis.fluent/1.13.0",
+      "files": [
+        ".signature.p7s",
+        "lib/net452/Microsoft.Azure.Management.Redis.Fluent.dll",
+        "lib/net452/Microsoft.Azure.Management.Redis.Fluent.runtimeconfig.json",
+        "lib/net452/Microsoft.Azure.Management.Redis.Fluent.xml",
+        "lib/netstandard1.4/Microsoft.Azure.Management.Redis.Fluent.dll",
+        "lib/netstandard1.4/Microsoft.Azure.Management.Redis.Fluent.runtimeconfig.json",
+        "lib/netstandard1.4/Microsoft.Azure.Management.Redis.Fluent.xml",
+        "microsoft.azure.management.redis.fluent.1.13.0.nupkg.sha512",
+        "microsoft.azure.management.redis.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.ResourceManager.Fluent/1.13.0": {
+      "sha512": "Zzn3JHQADq2VJiKyITwJV7RwgkFe6k4OF8bBXePj54LVnNRLMSNNDwprgcbTvnD6GID//cNVSgLVOvC/TiRmOg==",
+      "type": "package",
+      "path": "microsoft.azure.management.resourcemanager.fluent/1.13.0",
+      "files": [
+        ".signature.p7s",
+        "lib/net452/Microsoft.Azure.Management.ResourceManager.Fluent.dll",
+        "lib/net452/Microsoft.Azure.Management.ResourceManager.Fluent.runtimeconfig.json",
+        "lib/net452/Microsoft.Azure.Management.ResourceManager.Fluent.xml",
+        "lib/netstandard1.4/Microsoft.Azure.Management.ResourceManager.Fluent.dll",
+        "lib/netstandard1.4/Microsoft.Azure.Management.ResourceManager.Fluent.runtimeconfig.json",
+        "lib/netstandard1.4/Microsoft.Azure.Management.ResourceManager.Fluent.xml",
+        "microsoft.azure.management.resourcemanager.fluent.1.13.0.nupkg.sha512",
+        "microsoft.azure.management.resourcemanager.fluent.nuspec"
+      ]
+    },
     "Microsoft.Azure.Services.AppAuthentication/1.0.1": {
       "sha512": "oSVQ+YLgn0PfDLBRwOtHrkw06Pc6HvqIVrtFFWMg/1eafY+Hbrm1CSXnzXKXJwqUUv0ynvuwqzjN+IFR3g588w==",
       "type": "package",
@@ -7486,134 +7501,6 @@
         "ref/xamarinwatchos10/_._",
         "useSharedDesignerContext.txt",
         "version.txt"
-      ]
-    },
-    "Microsoft.Data.Edm/5.8.2": {
-      "sha512": "P/d8DxA6MFHroBEn/jW0LMQSIKnsRRibrZtRCLfov2boQfrQ1R1BVgkJ5oIhcQsOm0l4POv+I2ny6RBsclNbOw==",
-      "type": "package",
-      "path": "microsoft.data.edm/5.8.2",
-      "files": [
-        "lib/net40/Microsoft.Data.Edm.dll",
-        "lib/net40/Microsoft.Data.Edm.xml",
-        "lib/net40/de/Microsoft.Data.Edm.resources.dll",
-        "lib/net40/es/Microsoft.Data.Edm.resources.dll",
-        "lib/net40/fr/Microsoft.Data.Edm.resources.dll",
-        "lib/net40/it/Microsoft.Data.Edm.resources.dll",
-        "lib/net40/ja/Microsoft.Data.Edm.resources.dll",
-        "lib/net40/ko/Microsoft.Data.Edm.resources.dll",
-        "lib/net40/ru/Microsoft.Data.Edm.resources.dll",
-        "lib/net40/zh-Hans/Microsoft.Data.Edm.resources.dll",
-        "lib/net40/zh-Hant/Microsoft.Data.Edm.resources.dll",
-        "lib/netstandard1.1/Microsoft.Data.Edm.dll",
-        "lib/netstandard1.1/Microsoft.Data.Edm.xml",
-        "lib/netstandard1.1/de/Microsoft.Data.Edm.resources.dll",
-        "lib/netstandard1.1/es/Microsoft.Data.Edm.resources.dll",
-        "lib/netstandard1.1/fr/Microsoft.Data.Edm.resources.dll",
-        "lib/netstandard1.1/it/Microsoft.Data.Edm.resources.dll",
-        "lib/netstandard1.1/ja/Microsoft.Data.Edm.resources.dll",
-        "lib/netstandard1.1/ko/Microsoft.Data.Edm.resources.dll",
-        "lib/netstandard1.1/ru/Microsoft.Data.Edm.resources.dll",
-        "lib/netstandard1.1/zh-Hans/Microsoft.Data.Edm.resources.dll",
-        "lib/netstandard1.1/zh-Hant/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.Data.Edm.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.Data.Edm.xml",
-        "lib/portable-net40+sl5+wp8+win8+wpa/de/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/es/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/fr/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/it/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/ja/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/ko/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/ru/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hans/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hant/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/Microsoft.Data.Edm.dll",
-        "lib/portable-net45+wp8+win8+wpa/Microsoft.Data.Edm.xml",
-        "lib/portable-net45+wp8+win8+wpa/de/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/es/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/fr/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/it/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/ja/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/ko/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/ru/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/zh-Hans/Microsoft.Data.Edm.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/zh-Hant/Microsoft.Data.Edm.resources.dll",
-        "lib/sl4/Microsoft.Data.Edm.dll",
-        "lib/sl4/Microsoft.Data.Edm.xml",
-        "lib/sl4/de/Microsoft.Data.Edm.resources.dll",
-        "lib/sl4/es/Microsoft.Data.Edm.resources.dll",
-        "lib/sl4/fr/Microsoft.Data.Edm.resources.dll",
-        "lib/sl4/it/Microsoft.Data.Edm.resources.dll",
-        "lib/sl4/ja/Microsoft.Data.Edm.resources.dll",
-        "lib/sl4/ko/Microsoft.Data.Edm.resources.dll",
-        "lib/sl4/ru/Microsoft.Data.Edm.resources.dll",
-        "lib/sl4/zh-Hans/Microsoft.Data.Edm.resources.dll",
-        "lib/sl4/zh-Hant/Microsoft.Data.Edm.resources.dll",
-        "microsoft.data.edm.5.8.2.nupkg.sha512",
-        "microsoft.data.edm.nuspec"
-      ]
-    },
-    "Microsoft.Data.OData/5.8.2": {
-      "sha512": "oEIUtXcRiKogF0yZxA+QdgxoBJ34989qL/5xOSrTfxAhzNJV5Hw6DRdWgUCpeXFMoJUQx7ptbHCN+My/LCQfsg==",
-      "type": "package",
-      "path": "microsoft.data.odata/5.8.2",
-      "files": [
-        "lib/net40/Microsoft.Data.OData.dll",
-        "lib/net40/Microsoft.Data.OData.xml",
-        "lib/net40/de/Microsoft.Data.OData.resources.dll",
-        "lib/net40/es/Microsoft.Data.OData.resources.dll",
-        "lib/net40/fr/Microsoft.Data.OData.resources.dll",
-        "lib/net40/it/Microsoft.Data.OData.resources.dll",
-        "lib/net40/ja/Microsoft.Data.OData.resources.dll",
-        "lib/net40/ko/Microsoft.Data.OData.resources.dll",
-        "lib/net40/ru/Microsoft.Data.OData.resources.dll",
-        "lib/net40/zh-Hans/Microsoft.Data.OData.resources.dll",
-        "lib/net40/zh-Hant/Microsoft.Data.OData.resources.dll",
-        "lib/netstandard1.1/Microsoft.Data.OData.dll",
-        "lib/netstandard1.1/Microsoft.Data.OData.xml",
-        "lib/netstandard1.1/de/Microsoft.Data.OData.resources.dll",
-        "lib/netstandard1.1/es/Microsoft.Data.OData.resources.dll",
-        "lib/netstandard1.1/fr/Microsoft.Data.OData.resources.dll",
-        "lib/netstandard1.1/it/Microsoft.Data.OData.resources.dll",
-        "lib/netstandard1.1/ja/Microsoft.Data.OData.resources.dll",
-        "lib/netstandard1.1/ko/Microsoft.Data.OData.resources.dll",
-        "lib/netstandard1.1/ru/Microsoft.Data.OData.resources.dll",
-        "lib/netstandard1.1/zh-Hans/Microsoft.Data.OData.resources.dll",
-        "lib/netstandard1.1/zh-Hant/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.Data.OData.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.Data.OData.xml",
-        "lib/portable-net40+sl5+wp8+win8+wpa/de/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/es/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/fr/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/it/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/ja/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/ko/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/ru/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hans/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hant/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/Microsoft.Data.OData.dll",
-        "lib/portable-net45+wp8+win8+wpa/Microsoft.Data.OData.xml",
-        "lib/portable-net45+wp8+win8+wpa/de/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/es/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/fr/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/it/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/ja/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/ko/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/ru/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/zh-Hans/Microsoft.Data.OData.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/zh-Hant/Microsoft.Data.OData.resources.dll",
-        "lib/sl4/Microsoft.Data.OData.dll",
-        "lib/sl4/Microsoft.Data.OData.xml",
-        "lib/sl4/de/Microsoft.Data.OData.resources.dll",
-        "lib/sl4/es/Microsoft.Data.OData.resources.dll",
-        "lib/sl4/fr/Microsoft.Data.OData.resources.dll",
-        "lib/sl4/it/Microsoft.Data.OData.resources.dll",
-        "lib/sl4/ja/Microsoft.Data.OData.resources.dll",
-        "lib/sl4/ko/Microsoft.Data.OData.resources.dll",
-        "lib/sl4/ru/Microsoft.Data.OData.resources.dll",
-        "lib/sl4/zh-Hans/Microsoft.Data.OData.resources.dll",
-        "lib/sl4/zh-Hant/Microsoft.Data.OData.resources.dll",
-        "microsoft.data.odata.5.8.2.nupkg.sha512",
-        "microsoft.data.odata.nuspec"
       ]
     },
     "Microsoft.Data.Sqlite/2.1.0": {
@@ -8867,10 +8754,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.Rest.ClientRuntime/2.3.8": {
-      "sha512": "Hj96LBoCwKY2VQKfSCVGGPV1sSumVjuYnrlpBwL4JSTnSK4b6ZxjLtXj8LgmKav8xJ2gps+UN7eI3hHVFKvBFw==",
+    "Microsoft.Rest.ClientRuntime/2.3.10": {
+      "sha512": "JO9CzV1hvjtrIzq06gJ5nNv7GV24Xz3Y3O9vx7fCe7ndNA0NmD3fZ9JUgFir2UvJ2/+9vvCo/6RXjyfywvQQIw==",
       "type": "package",
-      "path": "microsoft.rest.clientruntime/2.3.8",
+      "path": "microsoft.rest.clientruntime/2.3.10",
       "files": [
         "lib/net452/Microsoft.Rest.ClientRuntime.dll",
         "lib/net452/Microsoft.Rest.ClientRuntime.runtimeconfig.json",
@@ -8878,14 +8765,14 @@
         "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.dll",
         "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.runtimeconfig.json",
         "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.xml",
-        "microsoft.rest.clientruntime.2.3.8.nupkg.sha512",
+        "microsoft.rest.clientruntime.2.3.10.nupkg.sha512",
         "microsoft.rest.clientruntime.nuspec"
       ]
     },
-    "Microsoft.Rest.ClientRuntime.Azure/3.3.7": {
-      "sha512": "6u8JIuvrztse4tPOcvNzAJuzGBP0uY+Ijggk8ZYhp0siGEZ1XfZylf1vpNGUicvwcrhhoIgDW73Z1L6QGssr2g==",
+    "Microsoft.Rest.ClientRuntime.Azure/3.3.10": {
+      "sha512": "0cN3zl/lYtvClJMWVL5bCWr3iMnCx2/uGt8xbo8txNMJxp5bLKlhErKflVJRWeUfTl2clREt13+rOy/iQ1/RKg==",
       "type": "package",
-      "path": "microsoft.rest.clientruntime.azure/3.3.7",
+      "path": "microsoft.rest.clientruntime.azure/3.3.10",
       "files": [
         "lib/net452/Microsoft.Rest.ClientRuntime.Azure.dll",
         "lib/net452/Microsoft.Rest.ClientRuntime.Azure.runtimeconfig.json",
@@ -8893,8 +8780,23 @@
         "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll",
         "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.runtimeconfig.json",
         "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.xml",
-        "microsoft.rest.clientruntime.azure.3.3.7.nupkg.sha512",
+        "microsoft.rest.clientruntime.azure.3.3.10.nupkg.sha512",
         "microsoft.rest.clientruntime.azure.nuspec"
+      ]
+    },
+    "Microsoft.Rest.ClientRuntime.Azure.Authentication/2.3.2": {
+      "sha512": "LC+5JPffUuKTgPf2Y6PLohOZoqJjc+KLyFd2u38qcVNgfmYAByDwKH5UwGyWXqAPW5L3beV2ykDJr5lMxH9vCg==",
+      "type": "package",
+      "path": "microsoft.rest.clientruntime.azure.authentication/2.3.2",
+      "files": [
+        "lib/net452/Microsoft.Rest.ClientRuntime.Azure.Authentication.dll",
+        "lib/net452/Microsoft.Rest.ClientRuntime.Azure.Authentication.runtimeconfig.json",
+        "lib/net452/Microsoft.Rest.ClientRuntime.Azure.Authentication.xml",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.Authentication.dll",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.Authentication.runtimeconfig.json",
+        "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.Authentication.xml",
+        "microsoft.rest.clientruntime.azure.authentication.2.3.2.nupkg.sha512",
+        "microsoft.rest.clientruntime.azure.authentication.nuspec"
       ]
     },
     "Microsoft.VisualStudio.Web.BrowserLink/2.1.1": {
@@ -14016,70 +13918,6 @@
         "system.security.securestring.nuspec"
       ]
     },
-    "System.Spatial/5.8.2": {
-      "sha512": "0RfZZJ8RlrfjoBPAF6pczX4Nd2kyLM8EX1PCP5Rqs/jOhJBUPYhpXjIsVAYN7kocj9IJ9XoJWAxWgXIDtJY2Ag==",
-      "type": "package",
-      "path": "system.spatial/5.8.2",
-      "files": [
-        "lib/net40/System.Spatial.dll",
-        "lib/net40/System.Spatial.xml",
-        "lib/net40/de/System.Spatial.resources.dll",
-        "lib/net40/es/System.Spatial.resources.dll",
-        "lib/net40/fr/System.Spatial.resources.dll",
-        "lib/net40/it/System.Spatial.resources.dll",
-        "lib/net40/ja/System.Spatial.resources.dll",
-        "lib/net40/ko/System.Spatial.resources.dll",
-        "lib/net40/ru/System.Spatial.resources.dll",
-        "lib/net40/zh-Hans/System.Spatial.resources.dll",
-        "lib/net40/zh-Hant/System.Spatial.resources.dll",
-        "lib/netstandard1.1/System.Spatial.dll",
-        "lib/netstandard1.1/System.Spatial.xml",
-        "lib/netstandard1.1/de/System.Spatial.resources.dll",
-        "lib/netstandard1.1/es/System.Spatial.resources.dll",
-        "lib/netstandard1.1/fr/System.Spatial.resources.dll",
-        "lib/netstandard1.1/it/System.Spatial.resources.dll",
-        "lib/netstandard1.1/ja/System.Spatial.resources.dll",
-        "lib/netstandard1.1/ko/System.Spatial.resources.dll",
-        "lib/netstandard1.1/ru/System.Spatial.resources.dll",
-        "lib/netstandard1.1/zh-Hans/System.Spatial.resources.dll",
-        "lib/netstandard1.1/zh-Hant/System.Spatial.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/System.Spatial.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/System.Spatial.xml",
-        "lib/portable-net40+sl5+wp8+win8+wpa/de/System.Spatial.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/es/System.Spatial.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/fr/System.Spatial.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/it/System.Spatial.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/ja/System.Spatial.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/ko/System.Spatial.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/ru/System.Spatial.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hans/System.Spatial.resources.dll",
-        "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hant/System.Spatial.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/System.Spatial.dll",
-        "lib/portable-net45+wp8+win8+wpa/System.Spatial.xml",
-        "lib/portable-net45+wp8+win8+wpa/de/System.Spatial.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/es/System.Spatial.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/fr/System.Spatial.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/it/System.Spatial.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/ja/System.Spatial.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/ko/System.Spatial.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/ru/System.Spatial.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/zh-Hans/System.Spatial.resources.dll",
-        "lib/portable-net45+wp8+win8+wpa/zh-Hant/System.Spatial.resources.dll",
-        "lib/sl4/System.Spatial.dll",
-        "lib/sl4/System.Spatial.xml",
-        "lib/sl4/de/System.Spatial.resources.dll",
-        "lib/sl4/es/System.Spatial.resources.dll",
-        "lib/sl4/fr/System.Spatial.resources.dll",
-        "lib/sl4/it/System.Spatial.resources.dll",
-        "lib/sl4/ja/System.Spatial.resources.dll",
-        "lib/sl4/ko/System.Spatial.resources.dll",
-        "lib/sl4/ru/System.Spatial.resources.dll",
-        "lib/sl4/zh-Hans/System.Spatial.resources.dll",
-        "lib/sl4/zh-Hant/System.Spatial.resources.dll",
-        "system.spatial.5.8.2.nupkg.sha512",
-        "system.spatial.nuspec"
-      ]
-    },
     "System.Text.Encoding/4.3.0": {
       "sha512": "BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
       "type": "package",
@@ -15125,11 +14963,12 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "WindowsAzure.Storage/8.1.4": {
-      "sha512": "W6ZZ0/o7+3Qb77mRAQyLjPudHG3OMeeQ4p9yY13PUdJArmRCx2cLMm5F4tpIjJXxzHC0ew0oK7DMDGILMdfCnw==",
+    "WindowsAzure.Storage/9.3.0": {
+      "sha512": "ph8JP7XcDGrTZvrmWd+22qrUB4iEdp7YK+jiwyuLaxpzEwkkmTo2/Ed9W8jTz9rnaXwYDEmynvoFFXsqyi8ZxA==",
       "type": "package",
-      "path": "windowsazure.storage/8.1.4",
+      "path": "windowsazure.storage/9.3.0",
       "files": [
+        ".signature.p7s",
         "lib/net45/Microsoft.WindowsAzure.Storage.dll",
         "lib/net45/Microsoft.WindowsAzure.Storage.pdb",
         "lib/net45/Microsoft.WindowsAzure.Storage.xml",
@@ -15143,16 +14982,19 @@
         "lib/wp8/Microsoft.WindowsAzure.Storage.pdb",
         "lib/wpa/Microsoft.WindowsAzure.Storage.dll",
         "lib/wpa/Microsoft.WindowsAzure.Storage.pdb",
-        "windowsazure.storage.8.1.4.nupkg.sha512",
+        "windowsazure.storage.9.3.0.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "FluentScheduler >= 5.3.0",
       "Isopoh.Cryptography.Argon2 >= 1.0.8",
       "Microsoft.AspNetCore.All >= 2.1.2",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 2.1.1",
+      "Microsoft.Azure.Management.Redis >= 4.4.0",
+      "Microsoft.Azure.Management.Redis.Fluent >= 1.13.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.1",
       "MongoDB.Bson >= 2.7.0",
@@ -15162,7 +15004,8 @@
       "Newtonsoft.Json.Bson >= 1.0.1",
       "System.Configuration.ConfigurationManager >= 4.5.0",
       "System.IdentityModel.Tokens.Jwt >= 5.2.4",
-      "System.Runtime.Serialization.Primitives >= 4.3.0"
+      "System.Runtime.Serialization.Primitives >= 4.3.0",
+      "WindowsAzure.Storage >= 9.3.0"
     ]
   },
   "packageFolders": {
@@ -15206,6 +15049,10 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "FluentScheduler": {
+            "target": "Package",
+            "version": "[5.3.0, )"
+          },
           "Isopoh.Cryptography.Argon2": {
             "target": "Package",
             "version": "[1.0.8, )"
@@ -15217,6 +15064,14 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[2.1.1, )"
+          },
+          "Microsoft.Azure.Management.Redis": {
+            "target": "Package",
+            "version": "[4.4.0, )"
+          },
+          "Microsoft.Azure.Management.Redis.Fluent": {
+            "target": "Package",
+            "version": "[1.13.0, )"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
@@ -15258,6 +15113,10 @@
           "System.Runtime.Serialization.Primitives": {
             "target": "Package",
             "version": "[4.3.0, )"
+          },
+          "WindowsAzure.Storage": {
+            "target": "Package",
+            "version": "[9.3.0, )"
           }
         },
         "imports": [

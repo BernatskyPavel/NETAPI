@@ -12,22 +12,29 @@ namespace NETAPI.Models
 {
     public class TCities
     {
+        public const string IDFIELD = "_id";
+        public const string TIDFIELD = "tour_id";
+        public const string CIDFIELD = "city_id";
+        public const string ARRIVALFIELD = "from";
+        public const string DEPARTUREFIELD = "to";
+        public const string STATUSFIELD = "status";
+
         [BsonId(IdGenerator = typeof(BsonObjectIdGenerator))]
-        [BsonElement("_id")]
+        [BsonElement(elementName: IDFIELD)]
         public BsonObjectId Id { get; set; }
-        [BsonElement("tour_id")]
+        [BsonElement(elementName: TIDFIELD)]
         [BsonRequired]
         public BsonObjectId TId { get; set; }
-        [BsonElement("city_id")]
+        [BsonElement(elementName: CIDFIELD)]
         [BsonRequired]
         public BsonObjectId CId { get; set; }
-        [BsonElement("from")]
+        [BsonElement(elementName: ARRIVALFIELD)]
         [JsonIgnore]
         public DateTime? Start { get; set; }
-        [BsonElement("to")]
+        [BsonElement(elementName: DEPARTUREFIELD)]
         [JsonIgnore]
         public DateTime? End { get; set; }
-        [BsonElement("status")]
+        [BsonElement(elementName: STATUSFIELD)]
         [BsonRequired]
         public string Status { get; set; }
         [BsonIgnore]
@@ -35,8 +42,10 @@ namespace NETAPI.Models
         [BsonIgnore]
         public string Description { get; set; }
         [BsonIgnore]
+        [JsonIgnore]
         public List<string> Photos { get; set; }
         [BsonIgnore]
+        [JsonIgnore]
         public List<double> Coordinates { get; set; }
 
         TCities()

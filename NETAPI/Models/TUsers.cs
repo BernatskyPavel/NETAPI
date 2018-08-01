@@ -10,20 +10,29 @@ using System.Runtime.Serialization.Formatters;
 using System.ComponentModel;
 using MongoDB.Bson.Serialization.IdGenerators;
 using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Bson.Serialization;
+using Newtonsoft.Json;
 
 namespace NETAPI.Models
 {
     public class TUsers
     {
+        public const string UIDFIELD = "user_id";
+        public const string TIDFIELD = "tour_id";
+        public const string IDFIELD = "_id";
+
         [BsonId(IdGenerator = typeof(BsonObjectIdGenerator))]
-        [BsonElement("_id")]
+        [BsonElement(elementName: IDFIELD)]
         public BsonObjectId Id { get; set; }
-        [BsonElement("user_id")]
+        [BsonElement(elementName: UIDFIELD)]
+        [JsonProperty(PropertyName = UIDFIELD)]
         [BsonRequired]
         public BsonObjectId UId { get; set; }
-        [BsonElement("tour_id")]
+        [BsonElement(elementName: TIDFIELD)]
+        [JsonProperty(PropertyName = TIDFIELD)]
         [BsonRequired]
         public BsonObjectId TId { get; set; }
+        
 
     }
 }

@@ -50,6 +50,14 @@ namespace NETAPI
                             ValidateIssuerSigningKey = true,
                         };
                     });
+
+            services.AddHostedService<MongoService>();
+            services.AddDistributedRedisCache(option =>
+            {
+                option.Configuration = Properties.Resources.LocalHost;
+                option.InstanceName = Properties.Resources.CacheName;
+            });
+            services.AddMemoryCache();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

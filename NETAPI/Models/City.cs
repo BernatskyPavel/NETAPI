@@ -11,22 +11,31 @@ using System.ComponentModel;
 using MongoDB.Bson.Serialization.IdGenerators;
 using MongoDB.Bson.Serialization.Serializers;
 using System.Numerics;
+using Newtonsoft.Json;
 
 namespace NETAPI.Models
 {
     public class City
     {
+        public const string IDFIELD = "_id";
+        public const string NAMEFIELD = "name";
+        public const string ABOUTFIELD = "description";
+        public const string PHOTOFIELD = "photos";
+        public const string POSFIELD = "coordinates";
+
         [BsonId(IdGenerator = typeof(BsonObjectIdGenerator))]
-        [BsonElement("_id")]
+        [BsonElement(elementName: IDFIELD)]
         public BsonObjectId Id { get; set; }
-        [BsonElement("name")]
+        [BsonElement(elementName: NAMEFIELD)]
         [BsonRequired]
         public string Name { get; set; }
-        [BsonElement("description")]
+        [BsonElement(elementName: ABOUTFIELD)]
         public string Description { get; set; }
-        [BsonElement("photos")]
+        [BsonElement(elementName: PHOTOFIELD)]
         public List<string> Photos { get; set; }
-        [BsonElement("coordinates")]
+        [BsonElement(elementName: POSFIELD)]
+        [JsonIgnore]
         public List<double> Coordinates { get; set; }
+
     }
 }

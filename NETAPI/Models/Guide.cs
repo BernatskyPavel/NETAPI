@@ -10,38 +10,29 @@ using System.Runtime.Serialization.Formatters;
 using System.ComponentModel;
 using MongoDB.Bson.Serialization.IdGenerators;
 using MongoDB.Bson.Serialization.Serializers;
+using Newtonsoft.Json;
 
 namespace NETAPI.Models
 {
     public class Guide
     {
-        [BsonId(IdGenerator = typeof(CombGuidGenerator))]
-        [BsonElement("_id")]
-        public BsonObjectId Id { get; set; }
-        [BsonElement("name")]
-        [BsonRequired]
-        public BsonString Name { get; set; }
-        [BsonElement("phone")]
-        [BsonRequired]
-        public BsonString Phone { get; set; }
-        [BsonElement("schedule")]
-        [BsonRequired]
-        public BsonString Schedule { get; set; }
-    }
+        public const string IDFIELD = "_id";
+        public const string PHONEFIELD = "phone";
+        public const string UIDFIELD = "user_id";
 
-    /*
-     
-     _id
-:
-5b56fed8a4d9e305c8f3e562
-name
-:
-"guideName0"
-phone
-:
-"guidePhone0"
-schedule
-:
-"guideSchedule0"
-     */
+        [BsonId(IdGenerator = typeof(BsonObjectIdGenerator))]
+        [BsonElement(elementName: IDFIELD)]
+        public BsonObjectId Id { get; set; }
+        [BsonElement(elementName: PHONEFIELD)]
+        [BsonRequired]
+        public string Phone { get; set; }
+        [BsonElement(elementName: UIDFIELD)]
+        [BsonRequired]
+        [JsonIgnore]
+        public BsonObjectId UId { get; set; }
+        [BsonIgnore]
+        public BsonObjectId TId { get; set; }
+        [BsonIgnore]
+        public string Name { get; set; }
+    }
 }

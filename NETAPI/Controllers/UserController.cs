@@ -35,21 +35,19 @@ namespace NETAPI.Controllers
     public class UserController : ControllerBase
     {
         MongoContext context = new MongoContext();
-        // GET: api/User
-       /* [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }*/
-
         // GET: api/User/5
         [HttpGet("{id}")]
-        public async Task<string> Get(string id)
+        public async Task<User> Get(string id)
         {
-            User user = await context.Users.Find(filter: new BsonDocument("_id", new BsonObjectId(new ObjectId(id)))).FirstOrDefaultAsync();
-            if (user != null)
-                await user.SetTours(context);
-            return JsonConvert.SerializeObject(user);
+            try
+            {
+                User user = await context.Users.Find(filter: new BsonDocument(Models.User.IDFIELD, new BsonObjectId(new ObjectId(id)))).FirstOrDefaultAsync();
+                if (user != null)
+                    await user.SetTours(context);
+                return user;
+            }
+            catch (Exception)
+            { Response.StatusCode = StatusCodes.Status500InternalServerError; return null; }
         }
 
         // POST: api/User
@@ -59,27 +57,28 @@ namespace NETAPI.Controllers
             try
             {
                 new MailAddress(user.Email);
-                User users = await context.Users.Find(filter: new BsonDocument("email", user.Email)).FirstOrDefaultAsync();
+                User users = await context.Users.Find(filter: new BsonDocument(Models.User.EMAILFIELD, user.Email)).FirstOrDefaultAsync();
                 if (users != null)
                 {
-                    Response.StatusCode = 400;
-                    await Response.WriteAsync("User with such email exist.");
+                    throw new Exception("User with such email exist.");
                 }
                 else
                 {
-                    Argon2Config config = new Argon2Config();
-                    config.Type = Argon2Type.DataIndependentAddressing;
-                    config.Version = Argon2Version.Nineteen;
-                    config.Salt = Encoding.Default.GetBytes(Resources.LocalSalt);
-                    config.Password = Encoding.Default.GetBytes(user.Password);
+                    Argon2Config config = new Argon2Config
+                    {
+                        Type = Argon2Type.DataIndependentAddressing,
+                        Version = Argon2Version.Nineteen,
+                        Salt = Encoding.Default.GetBytes(Resources.LocalSalt),
+                        Password = Encoding.Default.GetBytes(user.Password)
+                    };
                     user.HPass = Argon2.Hash(config);
                     await context.Users.InsertOneAsync(user);
-                    new StatusCodeResult(200);
+                    new StatusCodeResult(StatusCodes.Status200OK);
                 }
             }
             catch (Exception exception)
             {
-                Response.StatusCode = 500;
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
                 await HttpContext.Response.WriteAsync(exception.Message.ToString());
             }
 
@@ -90,13 +89,15 @@ namespace NETAPI.Controllers
         {
             try
             {
-                User user = await context.Users.Find(filter: new BsonDocument("email", new BsonString(Email))).FirstOrDefaultAsync();
+                User user = await context.Users.Find(filter: new BsonDocument(Models.User.EMAILFIELD, new BsonString(Email))).FirstOrDefaultAsync();
                 if (user == null) throw new Exception("No User with such Email");
-                Argon2Config config = new Argon2Config();
-                config.Type = Argon2Type.DataIndependentAddressing;
-                config.Version = Argon2Version.Nineteen;
-                config.Salt = Encoding.Default.GetBytes(Resources.LocalSalt);
-                config.Password = Encoding.Default.GetBytes(Password);
+                Argon2Config config = new Argon2Config
+                {
+                    Type = Argon2Type.DataIndependentAddressing,
+                    Version = Argon2Version.Nineteen,
+                    Salt = Encoding.Default.GetBytes(Resources.LocalSalt),
+                    Password = Encoding.Default.GetBytes(Password)
+                };
                 string hPassword = Argon2.Hash(config);
                 if (user.HPass.Equals(hPassword))
                 {
@@ -133,27 +134,14 @@ namespace NETAPI.Controllers
                 }
                 else
                 {
-                    Response.StatusCode = 400;
-                    await Response.WriteAsync("Wrong Password");
+                    throw new Exception("Wrong Password");
                 }
             }
             catch (Exception exception)
             {
-                Response.StatusCode = 404;
+                Response.StatusCode = StatusCodes.Status500InternalServerError;
                 await HttpContext.Response.WriteAsync(exception.Message.ToString());
             }
-        }
-
-        // PUT: api/User/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

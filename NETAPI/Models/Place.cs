@@ -15,18 +15,27 @@ namespace NETAPI.Models
 {
     public class Place
     {
-        [BsonId(IdGenerator = typeof(CombGuidGenerator))]
-        [BsonElement("_id")]
+        public const string IDFIELD = "_id";
+        public const string NAMEFIELD = "name";
+        public const string ABOUTFIELD = "description";
+        public const string PHOTOFIELD = "photos";
+        public const string POSFIELD = "coordinates";
+        public const string CIDFIELD = "city_id";
+
+        [BsonId(IdGenerator = typeof(BsonObjectIdGenerator))]
+        [BsonElement(elementName: IDFIELD)]
         public BsonObjectId Id { get; set; }
-        [BsonElement("name")]
+        [BsonElement(elementName: CIDFIELD)]
+        public BsonObjectId CId { get; set; }
+        [BsonElement(elementName: NAMEFIELD)]
         [BsonRequired]
-        public BsonString Name { get; set; }
-        [BsonElement("description")]
-        public BsonString Description { get; set; }
-        [BsonElement("photos")]
-        public BsonArray Photos { get; set; }
-        [BsonElement("coordinates")]
+        public string Name { get; set; }
+        [BsonElement(elementName: ABOUTFIELD)]
+        public string Description { get; set; }
+        [BsonElement(elementName: PHOTOFIELD)]
+        public List<string> Photos { get; set; }
+        [BsonElement(elementName: POSFIELD)]
         [BsonRequired]
-        public BsonArray Coordinates { get; set; }
+        public List<double> Coordinates { get; set; }
     }
 }

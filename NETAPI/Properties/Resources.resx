@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CacheName" xml:space="preserve">
+    <value>master</value>
+  </data>
+  <data name="CacheString" xml:space="preserve">
+    <value>Changes</value>
+  </data>
+  <data name="ConnectionString" xml:space="preserve">
+    <value>mongodb://23.97.131.8:27017/TourAgencyDB</value>
+  </data>
+  <data name="LocalHost" xml:space="preserve">
+    <value>127.0.0.1</value>
+  </data>
   <data name="LocalSalt" xml:space="preserve">
     <value>}08$TCdA5@546tQp*Yp~HQVJCz1CuMScWznWPYDlqZb1EeKpAGz@Kn@9LBL*VLs398*SBrRd</value>
   </data>

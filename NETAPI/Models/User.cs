@@ -20,16 +20,21 @@ namespace NETAPI.Models
 {
     public class User
     {
+        public const string IDFIELD = "_id";
+        public const string NAMEFIELD = "name";
+        public const string EMAILFIELD = "email";
+        public const string PASSFIELD = "hpassword";
+
         [BsonId(IdGenerator = typeof(BsonObjectIdGenerator))]
-        [BsonElement("_id")]
+        [BsonElement(elementName: IDFIELD)]
         public BsonObjectId Id { get; set; }
-        [BsonElement("name")]
+        [BsonElement(elementName: NAMEFIELD)]
         [BsonRequired]
         public string Name { get; set; }
-        [BsonElement("email")]
+        [BsonElement(elementName: EMAILFIELD)]
         [BsonRequired]
         public string Email { get; set; }
-        [BsonElement("hpassword")]
+        [BsonElement(elementName: PASSFIELD)]
         [BsonRequired]
         [JsonIgnore]
         public string HPass { get; set; }
@@ -42,7 +47,7 @@ namespace NETAPI.Models
         public async Task SetTours(MongoContext context)
         {
             Tours = new List<BsonObjectId>();
-            List<TUsers> tusers = await context.TUsers.Find(filter: new BsonDocument("user_id", new BsonObjectId(new ObjectId(Id.ToString())))).ToListAsync();
+            List<TUsers> tusers = await context.TUsers.Find(filter: new BsonDocument(TUsers.UIDFIELD, new BsonObjectId(new ObjectId(Id.ToString())))).ToListAsync();
             tusers.ForEach((x) => { Tours.Add(x.TId); });
         }
     }

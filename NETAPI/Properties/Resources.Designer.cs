@@ -61,6 +61,42 @@ namespace NETAPI.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на master.
+        /// </summary>
+        internal static string CacheName {
+            get {
+                return ResourceManager.GetString("CacheName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Changes.
+        /// </summary>
+        internal static string CacheString {
+            get {
+                return ResourceManager.GetString("CacheString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на mongodb://23.97.131.8:27017/TourAgencyDB.
+        /// </summary>
+        internal static string ConnectionString {
+            get {
+                return ResourceManager.GetString("ConnectionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на 127.0.0.1.
+        /// </summary>
+        internal static string LocalHost {
+            get {
+                return ResourceManager.GetString("LocalHost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на }08$TCdA5@546tQp*Yp~HQVJCz1CuMScWznWPYDlqZb1EeKpAGz@Kn@9LBL*VLs398*SBrRd.
         /// </summary>
         internal static string LocalSalt {

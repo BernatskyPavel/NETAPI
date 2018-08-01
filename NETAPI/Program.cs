@@ -21,6 +21,7 @@ namespace NETAPI
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseWebRoot("D:\\Application\\Images")
                 .Build();
     }
 }

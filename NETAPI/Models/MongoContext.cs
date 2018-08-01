@@ -7,69 +7,32 @@ using MongoDB.Driver;
 using MongoDB.Driver.GridFS;
 using System.IO;
 using System.Configuration;
-
+using NETAPI.Properties;
 
 namespace NETAPI.Models
 {
     public class MongoContext
     {
-        IMongoDatabase database;
-        IGridFSBucket gridFS;
+        private IMongoDatabase database;
+        private IGridFSBucket gridFS;
 
         public MongoContext()
         {
-            string connectionString = "mongodb://23.97.131.8:27017/TourAgencyDB";
-            var connection = new MongoUrlBuilder(connectionString);
-            MongoClient client = new MongoClient(connectionString);
-            database = client.GetDatabase(connection.DatabaseName);
-            gridFS = new GridFSBucket(database);
+            string connectionString = Resources.ConnectionString;
+            MongoUrlBuilder connection = new MongoUrlBuilder(url: connectionString);
+            MongoClient client = new MongoClient(connectionString: connectionString);
+            database = client.GetDatabase(name: connection.DatabaseName);
+            gridFS = new GridFSBucket(database: database);
         }
 
-        ~MongoContext()
-        {
-
-        }
-
-        public IMongoCollection<Tour> Tours
-        {
-            get { return database.GetCollection<Tour>("Tours"); }
-        }
-
-        public IMongoCollection<User> Users
-        {
-            get { return database.GetCollection<User>("Users"); }
-        }
-        public IMongoCollection<TUsers> TUsers
-        {
-            get { return database.GetCollection<TUsers>("Tour_Users"); }
-        }
-        public IMongoCollection<TCities> TCities
-        {
-            get { return database.GetCollection<TCities>("Tour_Cities"); }
-        }
-        public IMongoCollection<TPlaces> TPlaces
-        {
-            get { return database.GetCollection<TPlaces>("Tour_Places"); }
-        }
-        public IMongoCollection<Place> Places
-        {
-            get { return database.GetCollection<Place>("Places"); }
-        }
-        public IMongoCollection<City> Cities
-        {
-            get { return database.GetCollection<City>("Cities"); }
-        }
-        public IMongoCollection<Guide> Guides
-        {
-            get { return database.GetCollection<Guide>("Guides"); }
-        }
-        public IMongoCollection<TGuides> TGuides
-        {
-            get { return database.GetCollection<TGuides>("Tour_Guides"); }
-        }
-        public class TourList
-        {
-            public IEnumerable<Tour> Tours { get; set; }
-        }
+        public IMongoCollection<Tour> Tours => database.GetCollection<Tour>(name: Status.TOURSCOLLECTION);
+        public IMongoCollection<User> Users => database.GetCollection<User>(name: Status.USERSCOLLECTION);
+        public IMongoCollection<TUsers> TUsers => database.GetCollection<TUsers>(name: Status.TOURUSERSCOLLECTION);
+        public IMongoCollection<TCities> TCities => database.GetCollection<TCities>(name: Status.TOURCITIESCOLLECTION);
+        public IMongoCollection<TPlaces> TPlaces => database.GetCollection<TPlaces>(name: Status.TOURPLACESCOLLECTION);
+        public IMongoCollection<Place> Places => database.GetCollection<Place>(name: Status.PLACESCOLLECTION);
+        public IMongoCollection<City> Cities => database.GetCollection<City>(name: Status.CITIESCOLLECTION);
+        public IMongoCollection<Guide> Guides => database.GetCollection<Guide>(name: Status.GUIDESCOLLECTION);
+        public IMongoCollection<TGuides> TGuides => database.GetCollection<TGuides>(name: Status.TOURGUIDESCOLLECTION);
     }
 }
